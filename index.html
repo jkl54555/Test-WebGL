@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | SimpleWebXR</title>
+    <title>Unity WebGL Player | testWebGLInteractive</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">SimpleWebXR</div>
+        <div id="unity-build-title">testWebGLInteractive</div>
       </div>
     </div>
     <script>
@@ -56,15 +56,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/TestWebgl.loader.js";
+      var loaderUrl = buildUrl + "/tttt.loader.js";
       var config = {
-        dataUrl: buildUrl + "/TestWebgl.data",
-        frameworkUrl: buildUrl + "/TestWebgl.framework.js",
-        codeUrl: buildUrl + "/TestWebgl.wasm",
+        dataUrl: buildUrl + "/tttt.data.gz",
+        frameworkUrl: buildUrl + "/tttt.framework.js.gz",
+        codeUrl: buildUrl + "/tttt.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Rufus31415",
-        productName: "SimpleWebXR",
-        productVersion: "1.0",
+        companyName: "DefaultCompany",
+        productName: "testWebGLInteractive",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
