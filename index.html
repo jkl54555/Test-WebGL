@@ -106,7 +106,9 @@
       document.body.appendChild(script);
 
       function hollo() {
-        unityInstance.SendMessage('HolloJava', 'TextOne');
+        unityInstance=>{
+          unityInstance.SendMessage('HolloJava', 'TextOne');
+        }
 }
     </script>
   </body>
