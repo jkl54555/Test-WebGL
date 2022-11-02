@@ -102,6 +102,14 @@
         });
       };
       document.body.appendChild(script);
+   
+      var myGameInstance = null;
+  script.onload = () => {
+    createUnityInstance(canvas, config, (progress) => {progressBarFull.style.width = 100 * progress + "%";}).then((unityInstance) => {
+      myGameInstance = unityInstance;
+      MyGameInstance.SendMessage('HolloJava', 'TextOne');
+    });
+  };
     </script>
   </body>
 </html>
