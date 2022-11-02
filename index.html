@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <button type="button" onclick="holloOne()">TextOne</button>
+    <p></p><p></p>
+    <input matInput required type="text" id="test1" value="Enter Text">
+    <input type="text" id="myText" placeholder="Enter Text">
+    <button type="button" onclick="holloTwo()">TextTwo</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -87,12 +92,14 @@
       }
       loadingBar.style.display = "block";
 
+      var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+          myGameInstance = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
