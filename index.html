@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <button type="button" onclick="InputTrue()">True</button>
+    <button type="button" onclick="InputFalse()">False</button>
+    <p></p>
     <button type="button" onclick="holloOne()">TextOne</button>
     <p></p><p></p>
-    <input matInput required type="text" id="test1" value="Enter Text">
     <input type="text" id="myText" placeholder="Enter Text">
     <button type="button" onclick="holloTwo()">TextTwo</button>
     <div id="unity-container" class="unity-desktop">
@@ -109,6 +111,20 @@
         });
       };
       document.body.appendChild(script);
+
+      function holloOne() {
+        myGameInstance.SendMessage('HolloJava', 'TextOne');
+      }
+      function holloTwo() {
+        var x = document.getElementById("myText").value;
+        myGameInstance.SendMessage('HolloJava', 'TextTwo',x);
+      }
+      function InputTrue() {
+        myGameInstance.SendMessage('Input', 'Input',true);
+      }
+      function InputFalse() {
+        myGameInstance.SendMessage('Input', 'Input',false);
+      }
     </script>
   </body>
 </html>
