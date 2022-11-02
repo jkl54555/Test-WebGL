@@ -104,12 +104,18 @@
         });
       };
       document.body.appendChild(script);
-
-      function hollo() {
-        unityInstance=>{
-          unityInstance.SendMessage('HolloJava', 'TextOne');
-        }
+      var myGameInstance = null;
+  script.onload = () => {
+    createUnityInstance(canvas, config, (progress) => {
+      progressBarFull.style.width = 100 * progress + "%";
+    }).then((unityInstance) => {
+      myGameInstance = unityInstance;
 }
+)};
+      function hollo() {
+        myGameInstance.SendMessage('HolloJava', 'TextOne');
+      }
+
     </script>
   </body>
 </html>
