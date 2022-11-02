@@ -9,7 +9,9 @@
   </head>
   <body>
     <button type="button" onclick="holloOne()">TextOne</button>
-    <button type="button" onclick="holloTwo()">TextTwo</button>
+    <p></p><p></p>
+    <input type="text" id="myText" value="Enter Text">
+    <button type="button" onclick="holloTwo()">Enter</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -112,7 +114,8 @@
         myGameInstance.SendMessage('HolloJava', 'TextOne');
       }
       function holloTwo() {
-        myGameInstance.SendMessage('HolloJava', 'TextTwo','Two');
+        var x = document.getElementById("myText").value;
+        myGameInstance.SendMessage('HolloJava', 'TextTwo',x);
       }
 
     </script>
