@@ -15,6 +15,7 @@
     <p></p><p></p>
     <input type="text" onfocus="InputFalse()" onblur="InputTrue()" id="myText" placeholder="Enter Text">
     <button type="button" onclick="holloTwo()">TextTwo</button>
+    <button type="button" onclick="Debug()">Debug</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -126,6 +127,10 @@
       function InputFalse() {
         console.log('InputFalse');
         myGameInstance.SendMessage('Input', 'Input',0);
+      }
+      function Debug() {
+
+        console.log(AddNumbers());
       }
     </script>
   </body>
