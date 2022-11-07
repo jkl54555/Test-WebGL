@@ -1,3 +1,4 @@
+<!-- 新的 -->
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -10,15 +11,15 @@
 </head>
 
 <body>
-  <button type="button" onclick="InputTrue()">True</button>
-  <button type="button" onclick="InputFalse()">False</button>
+  <button type="button" onclick="modleUp('1')">True</button>
   <p></p>
-  <button type="button" onclick="holloOne()">TextOne</button>
+  <button type="button" onclick="modleLeft('1')">False</button>
+  <button type="button" onclick="modleRight('1')">TextOne</button>
   <p></p>
-  <p></p>
-  <input type="text" onfocus="InputFalse()" onblur="InputTrue()" id="myText" placeholder="Enter Text">
-  <button type="button" onclick="holloTwo()">TextTwo</button>
-  <button type="button" onclick="Debug()">Debug</button>
+  <button type="button" onclick="modleDown('1')">TextOne</button>
+
+  <input type="text" onfocus="InputTrue('1')" onblur="InputTrue('0')" id="myText" placeholder="Enter Text">
+
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600></canvas>
     <div id="unity-loading-bar">
@@ -116,26 +117,22 @@
     };
     document.body.appendChild(script);
 
-    function holloOne() {
-      myGameInstance.SendMessage('HolloJava', 'TextOne');
-    }
-    function holloTwo() {
-      var x = document.getElementById("myText").value;
-      myGameInstance.SendMessage('HolloJava', 'TextTwo', x);
-    }
-    function InputTrue() {
-      console.log('InputTrue');
-      myGameInstance.SendMessage('Input', 'Input', 1);
-    }
-    function InputFalse() {
-      console.log('InputFalse');
-      myGameInstance.SendMessage('Input', 'Input', 0);
-    }
+    // 以下未改
 
-  </script>
-  <script url="">
-    function Debug() {
-      console.log(AddNumbers());
+    function sendText(a) {
+      myGameInstance.SendMessage('Cube', 'sendText', a);
+    }
+    function modleLeft(a) {
+      myGameInstance.SendMessage('Cube', 'MoveLeft', a);
+    }
+    function modleRight(a) {
+      myGameInstance.SendMessage('Cube', 'MoveRight', a);
+    }
+    function modleUp(a) {
+      myGameInstance.SendMessage('Cube', 'MoveUp', a);
+    }
+    function modleDown(a) {
+      myGameInstance.SendMessage('Cube', 'MoveDown', a);
     }
   </script>
 </body>
