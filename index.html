@@ -10,18 +10,12 @@
 </head>
 
 <body>
-  <button type="button"  onclick="modelUp('1')">Up</button>
-  <p></p>
-  <button type="button" onclick="modelLeft('1')">Left</button>
-  <button type="button" onclick="modelRight('1')">Right</button>
-  <p></p>
-  <button type="button" onclick="modelDown('1')">Down</button>
-  <p></p>
   <input type="button" value="Up"
   onmousedown ="modelUp('1')"
   onmouseup   ="modelUp('0')"
   onmouseout  ="modelUp('0')"
   />
+  <p></p>
   <input type="button" value="Left"
   onmousedown ="modelLeft('1')"
   onmouseup   ="modelLeft('0')"
@@ -32,11 +26,13 @@
   onmouseup   ="modelRight('0')"
   onmouseout  ="modelRight('0')"
   />
+  <p></p>
   <input type="button" value="Down"
   onmousedown ="modelDown('1')"
   onmouseup   ="modelDown('0')"
   onmouseout  ="modelDown('0')"
-  />
+  />  
+  <p></p>
 
   <!-- <input type="button" value="test"
   onmousedown   ="ButtonPressed(this);"
