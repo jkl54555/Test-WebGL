@@ -30,7 +30,7 @@
   /> -->
 
   <input type="text" onfocus="InputTrue(0)" onblur="InputTrue(1)" id="myText" placeholder="Enter Text">
-  <button type="button" onclick="holloTwo()">TextTwo</button>
+  <button type="button" onclick="sendText()">SendText</button>
 
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -141,8 +141,9 @@
     function modelDown(a) {
       myGameInstance.SendMessage('Cube', 'MoveDown',a);
     }
-    function sendText(a) {
-      myGameInstance.SendMessage('Cube', 'sendText',a);
+    function sendText() {
+      var x = document.getElementById("myText").value;
+      myGameInstance.SendMessage('Cube', 'sendText',x);
     }
 
     function InputTrue(a) {
