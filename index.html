@@ -10,13 +10,13 @@
 </head>
 
 <body>
-  <button type="button"  onmousedown="modelUp('1')" onmouseup="modelUp('0')"  onmouseout="modelUp('0')">Up</button>
+  <button type="button"  onmousedown="modelUp(1)" onmouseup="modelUp(0)"  onmouseout="modelUp(0)">Up</button>
   <p></p>
-  <button type="button" onmousedown="modelLeft('1')"onmouseup="modelLeft('0')"  onmouseout="modelLeft('0')">Left</button>
-  <button type="button" onmousedown="modelRight('1')"onmouseup="modelRight('0')"  onmouseout="modelRight('0')">Right</button>
+  <button type="button" onmousedown="modelLeft(1)"onmouseup="modelLeft(0)"  onmouseout="modelLeft(0)">Left</button>
+  <button type="button" onmousedown="modelRight(1)"onmouseup="modelRight(0)"  onmouseout="modelRight(0)">Right</button>
   <p></p>
-  <button type="button" onmousedown="modelDown('1')"onmouseup="modelDown('0')"  onmouseout="modelDown('0')">Down</button>
-
+  <button type="button" onmousedown="modelDown(1)"onmouseup="modelDown(0)"  onmouseout="modelDown(0)">Down</button>
+  <p></p>
   <!-- <input type="button" value="test"
   onmousedown   ="ButtonPressed(this);"
   ontouchstart  ="ButtonPressed(this);"
@@ -31,7 +31,7 @@
 
   <input type="text" onfocus="InputTrue('0')" onblur="InputTrue('1')" id="myText" placeholder="Enter Text">
   <button type="button" onclick="holloTwo()">TextTwo</button>
-  <button type="button" onclick="Debug()">Debug</button>
+
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600></canvas>
     <div id="unity-loading-bar">
@@ -130,16 +130,16 @@
     document.body.appendChild(script);
 
     function modelLeft(a) {
-      myGameInstance.SendMessage('cube', 'MoveLeft',a);
+      myGameInstance.SendMessage('Cube', 'MoveLeft',a);
     }
     function modelRight(a) {
-      myGameInstance.SendMessage('cube', 'MoveRight',a);
+      myGameInstance.SendMessage('Cube', 'MoveRight',a);
     }
     function modelUp(a) {
-      myGameInstance.SendMessage('cube', 'MoveUp',a);
+      myGameInstance.SendMessage('Cube', 'MoveUp',a);
     }
     function modelDown(a) {
-      myGameInstance.SendMessage('cube', 'MoveDown',a);
+      myGameInstance.SendMessage('Cube', 'MoveDown',a);
     }
     function sendText(a) {
       myGameInstance.SendMessage('Input', 'sendText',a);
@@ -151,11 +151,7 @@
     }
 
   </script>
-  <script url="">
-    function Debug() {
-      console.log(AddNumbers());
-    }
-  </script>
+
 </body>
 
 </html>
