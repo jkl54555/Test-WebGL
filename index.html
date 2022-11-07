@@ -29,7 +29,7 @@
   ontouchmove   ="CancelEvent(event);"
   /> -->
 
-  <input type="text" onfocus="InputTrue('0')" onblur="InputTrue('1')" id="myText" placeholder="Enter Text">
+  <input type="text" onfocus="InputTrue(0)" onblur="InputTrue(1)" id="myText" placeholder="Enter Text">
   <button type="button" onclick="holloTwo()">TextTwo</button>
 
   <div id="unity-container" class="unity-desktop">
@@ -142,7 +142,7 @@
       myGameInstance.SendMessage('Cube', 'MoveDown',a);
     }
     function sendText(a) {
-      myGameInstance.SendMessage('Input', 'sendText',a);
+      myGameInstance.SendMessage('Cube', 'sendText',a);
     }
 
     function InputTrue(a) {
